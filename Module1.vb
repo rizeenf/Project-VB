@@ -11,7 +11,7 @@ Module Module1
     Public Sub koneksi()
         'untuk koneksi data , server localhost, user id buat aja root (default)
         ' paswword kosongin kalau default, database sesuaikan dengan yang kalian buat
-        db = "Server=localhost;user id=root;password=;database=test_mysql"
+        db = "Server=localhost;user id=root;password=;database=projectvbnet"
         con = New MySqlConnection(db)
         Try
             If con.State = ConnectionState.Closed Then
