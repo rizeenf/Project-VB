@@ -61,6 +61,7 @@ Partial Class MainMenu
         Me.LoginPageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HistoryPageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -283,7 +284,7 @@ Partial Class MainMenu
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(912, 62)
+        Me.Label5.Location = New System.Drawing.Point(912, 44)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 16
@@ -292,7 +293,7 @@ Partial Class MainMenu
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(854, 62)
+        Me.Label6.Location = New System.Drawing.Point(854, 44)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 13)
         Me.Label6.TabIndex = 17
@@ -405,6 +406,19 @@ Partial Class MainMenu
         Me.Button5.Text = "LIHAT DETAIL"
         Me.Button5.UseVisualStyleBackColor = False
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label10.Location = New System.Drawing.Point(-9, 47)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(1769, 20)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "_________________________________________________________________________________" &
+    "________________________________________________________________________________" &
+    "_______________"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -418,6 +432,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Label10)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainMenu"
         Me.Text = "        "
@@ -475,4 +490,5 @@ Partial Class MainMenu
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Button5 As Button
+    Friend WithEvents Label10 As Label
 End Class

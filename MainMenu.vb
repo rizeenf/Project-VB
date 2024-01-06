@@ -71,7 +71,7 @@ Public Class MainMenu
         Tampil_data_history()
     End Sub
     Sub Tampil_data_buku()
-        da = New MySqlDataAdapter("select productId as Kode_Buku, product_name as Nama_Buku, product_qty as Stok, product_price as Tahun from product order by productId", con)
+        da = New MySqlDataAdapter("select productId as Kode_Buku, product_name as Nama_Buku, product_qty as Stok, product_price as Tahun from product order by date_createdAt", con)
         ds = New DataSet
         ds.Clear()
         da.Fill(ds, "product")
@@ -89,12 +89,16 @@ Public Class MainMenu
     Sub Nomor()
         Dim DR As DataRow
         Dim s As String
-        DR = SQLTable("select max(right(productId,1)) as nomor from product").Rows(0)
-        If DR.IsNull("Nomor") Then
-            s = "Book-1" 'member nilai awal
+        DR = SQLTable("select max(cast(substring(productId, 6) as int)) as productId FROM product").Rows(0)
+
+        If DR.IsNull("productId") Then
+            s = "Book-1" ' memberi nilai awal
         Else
-            s = "Book-" & Format(DR("Nomor") + 1, "0")
+            ' Konversi nilai productId ke Integer sebelum melakukan penambahan
+            Dim lastNumber As Integer = Convert.ToInt32(DR("productId"))
+            s = "Book-" & Format(lastNumber + 1, "0")
         End If
+
         TextBox1.Text = s
         TextBox1.Enabled = False
     End Sub
